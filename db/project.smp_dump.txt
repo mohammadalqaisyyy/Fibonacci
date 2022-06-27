@@ -1,0 +1,6 @@
+
+State Machine - |Fibonacci|controller:control|currentState
+Name currentState.s3 currentState.s2 currentState.s1 
+currentState.s1 0 0 0 
+currentState.s2 0 1 1 
+currentState.s3 1 0 1 
