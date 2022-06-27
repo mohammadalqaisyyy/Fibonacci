@@ -1,0 +1,438 @@
+Classic Timing Analyzer report for project
+Thu Jun 02 03:06:03 2022
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'Clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                ;
++------------------------------+-------+---------------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From                               ; To                                 ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 3.895 ns                                       ; num[1]                             ; comp:com|Done                      ; --         ; Clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.382 ns                                       ; controller:control|currentState.s1 ; state[1]                           ; Clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.496 ns                                      ; start                              ; controller:control|currentState.s2 ; --         ; Clk      ; 0            ;
+; Clock Setup: 'Clk'           ; N/A   ; None          ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|I[0]                      ; Clk        ; Clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                                    ;                                    ;            ;          ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2S15F484C3       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; Off                ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 6      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'Clk'                                                                                                                                                                                                                           ;
++-------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                               ; To                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|I[0]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.558 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|ft[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|ft[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|ft[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|ft[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|ft[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|ft[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|ft[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|t[0]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|t[1]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|t[2]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|t[3]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|t[4]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|t[5]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|t[6]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|t[7]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|t[8]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|ft[0]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|st[0]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|st[1]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|ft[1]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|st[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|I[3]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.379 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|I[0]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.353 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|ft[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|ft[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|ft[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|ft[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|ft[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|ft[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|ft[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|t[0]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|t[1]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|t[2]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|t[3]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|t[4]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|t[5]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|t[6]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|t[7]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|t[8]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|ft[0]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|st[0]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|st[1]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|ft[1]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|st[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.348 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|I[3]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.174 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[0]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.119 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[7]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.102 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[0]                     ; reg:reg1|st[0]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.093 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.092 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[2]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.088 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|st[0]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.060 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[3]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.054 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[1]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.043 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[4]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 1.017 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|I[2]                      ; Clk        ; Clk      ; None                        ; None                      ; 1.000 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[0]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.995 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.979 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[5]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.977 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.968 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[7]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.966 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[2]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.964 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[0]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.960 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[0]                      ; comp:com|Done                      ; Clk        ; Clk      ; None                        ; None                      ; 0.956 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[6]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.952 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[2]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.944 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.933 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[3]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.930 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[2]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.929 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[0]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.925 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; reg:reg1|I[1]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.922 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[1]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.919 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[3]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.909 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; controller:control|currentState.s3 ; Clk        ; Clk      ; None                        ; None                      ; 0.904 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.898 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[3]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.895 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[2]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.894 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[4]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.893 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[0]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.890 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[1]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.884 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[1]                      ; comp:com|Done                      ; Clk        ; Clk      ; None                        ; None                      ; 0.875 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[4]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.874 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.863 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[3]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.860 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[2]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.859 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[4]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.858 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[0]                     ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.855 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.855 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[5]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.853 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[1]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.849 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[5]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.839 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.828 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[6]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.828 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[3]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.825 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[2]                     ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.824 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[4]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.823 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[0]                     ; reg:reg1|st[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.820 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.820 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[2]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.820 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[5]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.818 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[1]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.814 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[6]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.804 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|I[2]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.795 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|st[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.793 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[0]                     ; reg:reg1|st[1]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.785 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.785 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[2]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.785 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[3]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.785 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[1]                     ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.779 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[2]                      ; comp:com|Done                      ; Clk        ; Clk      ; None                        ; None                      ; 0.777 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[3]                      ; comp:com|Done                      ; Clk        ; Clk      ; None                        ; None                      ; 0.767 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[0]                      ; reg:reg1|I[3]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.765 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[0]                      ; reg:reg1|I[1]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.765 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[6]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.765 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[0]                      ; reg:reg1|I[2]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.762 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[3]                     ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.762 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[8]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.762 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[2]                     ; reg:reg1|st[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.761 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[4]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.760 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|st[1]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.758 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[5]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.755 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[2]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[3]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[4]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[7]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.747 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[1]                     ; reg:reg1|st[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.744 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[1]                      ; reg:reg1|I[2]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.733 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[1]                      ; reg:reg1|I[3]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.730 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.715 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[2]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.715 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[3]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.715 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[4]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.715 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[5]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.715 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; comp:com|Done                      ; Clk        ; Clk      ; None                        ; None                      ; 0.708 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; controller:control|currentState.s1 ; Clk        ; Clk      ; None                        ; None                      ; 0.705 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|t[0]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.701 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[0]                     ; reg:reg1|ft[0]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.695 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|ft[1]                     ; reg:reg1|st[1]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.681 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|st[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.680 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[2]                     ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.680 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[3]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.680 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[4]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.680 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[5]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.680 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[6]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.680 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; controller:control|currentState.s2 ; Clk        ; Clk      ; None                        ; None                      ; 0.644 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[3]                     ; reg:reg1|ft[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.623 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|t[1]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.619 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[3]                     ; reg:reg1|t[3]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.619 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[6]                     ; reg:reg1|t[6]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.618 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[6]                     ; reg:reg1|ft[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.614 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|st[1]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.609 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[2]                     ; reg:reg1|st[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.609 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[3]                     ; reg:reg1|st[3]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.609 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[4]                     ; reg:reg1|st[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.609 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[5]                     ; reg:reg1|st[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.609 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[6]                     ; reg:reg1|st[6]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.609 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[7]                     ; reg:reg1|st[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.609 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[8]                     ; reg:reg1|st[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.609 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[5]                     ; reg:reg1|t[5]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.604 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[8]                     ; reg:reg1|t[8]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.603 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[7]                     ; reg:reg1|t[7]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.602 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[4]                     ; reg:reg1|t[4]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.599 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[2]                     ; reg:reg1|t[2]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.596 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; comp:com|Done                      ; Clk        ; Clk      ; None                        ; None                      ; 0.533 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; reg:reg1|I[1]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.530 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[1]                     ; reg:reg1|ft[1]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.530 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; comp:com|Done                      ; controller:control|currentState.s3 ; Clk        ; Clk      ; None                        ; None                      ; 0.523 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s1 ; controller:control|currentState.s2 ; Clk        ; Clk      ; None                        ; None                      ; 0.509 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[5]                     ; reg:reg1|ft[5]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.503 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[8]                     ; reg:reg1|ft[8]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.502 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[7]                     ; reg:reg1|ft[7]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[4]                     ; reg:reg1|ft[4]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.498 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|st[2]                     ; reg:reg1|ft[2]                     ; Clk        ; Clk      ; None                        ; None                      ; 0.495 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s2 ; controller:control|currentState.s2 ; Clk        ; Clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[2]                      ; reg:reg1|I[2]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[3]                      ; reg:reg1|I[3]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[0]                      ; reg:reg1|I[0]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[1]                      ; reg:reg1|I[1]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; controller:control|currentState.s3 ; controller:control|currentState.s3 ; Clk        ; Clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg:reg1|I[2]                      ; reg:reg1|I[3]                      ; Clk        ; Clk      ; None                        ; None                      ; 0.418 ns                ;
++-------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; tsu                                                                                        ;
++-------+--------------+------------+--------+------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                                 ; To Clock ;
++-------+--------------+------------+--------+------------------------------------+----------+
+; N/A   ; None         ; 3.895 ns   ; num[1] ; comp:com|Done                      ; Clk      ;
+; N/A   ; None         ; 3.798 ns   ; num[0] ; comp:com|Done                      ; Clk      ;
+; N/A   ; None         ; 3.665 ns   ; num[3] ; comp:com|Done                      ; Clk      ;
+; N/A   ; None         ; 3.546 ns   ; num[2] ; comp:com|Done                      ; Clk      ;
+; N/A   ; None         ; 2.763 ns   ; start  ; controller:control|currentState.s1 ; Clk      ;
+; N/A   ; None         ; 2.752 ns   ; start  ; controller:control|currentState.s3 ; Clk      ;
+; N/A   ; None         ; 2.735 ns   ; start  ; controller:control|currentState.s2 ; Clk      ;
++-------+--------------+------------+--------+------------------------------------+----------+
+
+
++------------------------------------------------------------------------------------------------+
+; tco                                                                                            ;
++-------+--------------+------------+------------------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                               ; To       ; From Clock ;
++-------+--------------+------------+------------------------------------+----------+------------+
+; N/A   ; None         ; 7.382 ns   ; controller:control|currentState.s1 ; state[1] ; Clk        ;
+; N/A   ; None         ; 6.859 ns   ; reg:reg1|t[5]                      ; Fnum[5]  ; Clk        ;
+; N/A   ; None         ; 6.784 ns   ; reg:reg1|t[2]                      ; Fnum[2]  ; Clk        ;
+; N/A   ; None         ; 6.112 ns   ; reg:reg1|t[1]                      ; Fnum[1]  ; Clk        ;
+; N/A   ; None         ; 5.900 ns   ; controller:control|currentState.s3 ; Done     ; Clk        ;
+; N/A   ; None         ; 5.703 ns   ; reg:reg1|t[7]                      ; Fnum[7]  ; Clk        ;
+; N/A   ; None         ; 5.566 ns   ; reg:reg1|t[3]                      ; Fnum[3]  ; Clk        ;
+; N/A   ; None         ; 5.336 ns   ; controller:control|currentState.s2 ; state[0] ; Clk        ;
+; N/A   ; None         ; 5.315 ns   ; reg:reg1|t[4]                      ; Fnum[4]  ; Clk        ;
+; N/A   ; None         ; 5.302 ns   ; reg:reg1|t[0]                      ; Fnum[0]  ; Clk        ;
+; N/A   ; None         ; 5.121 ns   ; reg:reg1|t[8]                      ; Fnum[8]  ; Clk        ;
+; N/A   ; None         ; 5.121 ns   ; reg:reg1|t[6]                      ; Fnum[6]  ; Clk        ;
++-------+--------------+------------+------------------------------------+----------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; th                                                                                               ;
++---------------+-------------+-----------+--------+------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                                 ; To Clock ;
++---------------+-------------+-----------+--------+------------------------------------+----------+
+; N/A           ; None        ; -2.496 ns ; start  ; controller:control|currentState.s2 ; Clk      ;
+; N/A           ; None        ; -2.513 ns ; start  ; controller:control|currentState.s3 ; Clk      ;
+; N/A           ; None        ; -2.524 ns ; start  ; controller:control|currentState.s1 ; Clk      ;
+; N/A           ; None        ; -3.307 ns ; num[2] ; comp:com|Done                      ; Clk      ;
+; N/A           ; None        ; -3.426 ns ; num[3] ; comp:com|Done                      ; Clk      ;
+; N/A           ; None        ; -3.559 ns ; num[0] ; comp:com|Done                      ; Clk      ;
+; N/A           ; None        ; -3.656 ns ; num[1] ; comp:com|Done                      ; Clk      ;
++---------------+-------------+-----------+--------+------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Jun 02 03:06:03 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off project -c project --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "Clk" is an undefined clock
+Info: Clock "Clk" Internal fmax is restricted to 500.0 MHz between source register "controller:control|currentState.s2" and destination register "reg:reg1|I[0]"
+    Info: fmax restricted to clock pin edge rate 2.0 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 1.558 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X10_Y3_N25; Fanout = 7; REG Node = 'controller:control|currentState.s2'
+            Info: 2: + IC(0.256 ns) + CELL(0.228 ns) = 0.484 ns; Loc. = LCCOMB_X10_Y3_N30; Fanout = 30; COMB Node = 'controller:control|Er~0'
+            Info: 3: + IC(0.328 ns) + CELL(0.746 ns) = 1.558 ns; Loc. = LCFF_X11_Y3_N29; Fanout = 5; REG Node = 'reg:reg1|I[0]'
+            Info: Total cell delay = 0.974 ns ( 62.52 % )
+            Info: Total interconnect delay = 0.584 ns ( 37.48 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "Clk" to destination register is 2.494 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'Clk'
+                Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 35; COMB Node = 'Clk~clkctrl'
+                Info: 3: + IC(0.679 ns) + CELL(0.618 ns) = 2.494 ns; Loc. = LCFF_X11_Y3_N29; Fanout = 5; REG Node = 'reg:reg1|I[0]'
+                Info: Total cell delay = 1.472 ns ( 59.02 % )
+                Info: Total interconnect delay = 1.022 ns ( 40.98 % )
+            Info: - Longest clock path from clock "Clk" to source register is 2.494 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'Clk'
+                Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 35; COMB Node = 'Clk~clkctrl'
+                Info: 3: + IC(0.679 ns) + CELL(0.618 ns) = 2.494 ns; Loc. = LCFF_X10_Y3_N25; Fanout = 7; REG Node = 'controller:control|currentState.s2'
+                Info: Total cell delay = 1.472 ns ( 59.02 % )
+                Info: Total interconnect delay = 1.022 ns ( 40.98 % )
+        Info: + Micro clock to output delay of source is 0.094 ns
+        Info: + Micro setup delay of destination is 0.090 ns
+Info: tsu for register "comp:com|Done" (data pin = "num[1]", clock pin = "Clk") is 3.895 ns
+    Info: + Longest pin to register delay is 6.299 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.857 ns) = 0.857 ns; Loc. = PIN_C18; Fanout = 1; PIN Node = 'num[1]'
+        Info: 2: + IC(4.566 ns) + CELL(0.366 ns) = 5.789 ns; Loc. = LCCOMB_X11_Y3_N16; Fanout = 1; COMB Node = 'comp:com|Done~0'
+        Info: 3: + IC(0.302 ns) + CELL(0.053 ns) = 6.144 ns; Loc. = LCCOMB_X10_Y3_N20; Fanout = 1; COMB Node = 'comp:com|Done~1'
+        Info: 4: + IC(0.000 ns) + CELL(0.155 ns) = 6.299 ns; Loc. = LCFF_X10_Y3_N21; Fanout = 5; REG Node = 'comp:com|Done'
+        Info: Total cell delay = 1.431 ns ( 22.72 % )
+        Info: Total interconnect delay = 4.868 ns ( 77.28 % )
+    Info: + Micro setup delay of destination is 0.090 ns
+    Info: - Shortest clock path from clock "Clk" to destination register is 2.494 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'Clk'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 35; COMB Node = 'Clk~clkctrl'
+        Info: 3: + IC(0.679 ns) + CELL(0.618 ns) = 2.494 ns; Loc. = LCFF_X10_Y3_N21; Fanout = 5; REG Node = 'comp:com|Done'
+        Info: Total cell delay = 1.472 ns ( 59.02 % )
+        Info: Total interconnect delay = 1.022 ns ( 40.98 % )
+Info: tco from clock "Clk" to destination pin "state[1]" through register "controller:control|currentState.s1" is 7.382 ns
+    Info: + Longest clock path from clock "Clk" to source register is 2.494 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'Clk'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 35; COMB Node = 'Clk~clkctrl'
+        Info: 3: + IC(0.679 ns) + CELL(0.618 ns) = 2.494 ns; Loc. = LCFF_X11_Y3_N21; Fanout = 3; REG Node = 'controller:control|currentState.s1'
+        Info: Total cell delay = 1.472 ns ( 59.02 % )
+        Info: Total interconnect delay = 1.022 ns ( 40.98 % )
+    Info: + Micro clock to output delay of source is 0.094 ns
+    Info: + Longest register to pin delay is 4.794 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X11_Y3_N21; Fanout = 3; REG Node = 'controller:control|currentState.s1'
+        Info: 2: + IC(2.786 ns) + CELL(2.008 ns) = 4.794 ns; Loc. = PIN_B13; Fanout = 0; PIN Node = 'state[1]'
+        Info: Total cell delay = 2.008 ns ( 41.89 % )
+        Info: Total interconnect delay = 2.786 ns ( 58.11 % )
+Info: th for register "controller:control|currentState.s2" (data pin = "start", clock pin = "Clk") is -2.496 ns
+    Info: + Longest clock path from clock "Clk" to destination register is 2.494 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'Clk'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 35; COMB Node = 'Clk~clkctrl'
+        Info: 3: + IC(0.679 ns) + CELL(0.618 ns) = 2.494 ns; Loc. = LCFF_X10_Y3_N25; Fanout = 7; REG Node = 'controller:control|currentState.s2'
+        Info: Total cell delay = 1.472 ns ( 59.02 % )
+        Info: Total interconnect delay = 1.022 ns ( 40.98 % )
+    Info: + Micro hold delay of destination is 0.149 ns
+    Info: - Shortest pin to register delay is 5.139 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.827 ns) = 0.827 ns; Loc. = PIN_V13; Fanout = 3; PIN Node = 'start'
+        Info: 2: + IC(3.811 ns) + CELL(0.346 ns) = 4.984 ns; Loc. = LCCOMB_X10_Y3_N24; Fanout = 1; COMB Node = 'controller:control|Selector1~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.155 ns) = 5.139 ns; Loc. = LCFF_X10_Y3_N25; Fanout = 7; REG Node = 'controller:control|currentState.s2'
+        Info: Total cell delay = 1.328 ns ( 25.84 % )
+        Info: Total interconnect delay = 3.811 ns ( 74.16 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 191 megabytes
+    Info: Processing ended: Thu Jun 02 03:06:03 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
